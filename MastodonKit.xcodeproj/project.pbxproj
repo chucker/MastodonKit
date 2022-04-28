@@ -44,13 +44,12 @@
 		15CAFCDA22C1923E00444841 /* PollPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CAFCD822C1923E00444841 /* PollPayload.swift */; };
 		15CAFCDB22C1923E00444841 /* PollPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CAFCD822C1923E00444841 /* PollPayload.swift */; };
 		15CAFCDD22C1933A00444841 /* PollPayloadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CAFCDC22C1933A00444841 /* PollPayloadTests.swift */; };
-		5F2F468D298DBC8500A1059B /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F468C298DBC8500A1059B /* Response.swift */; };
-		5F2F468E298DBC8500A1059B /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F468C298DBC8500A1059B /* Response.swift */; };
+		5FA81216281B11A9008B6DAB /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA81215281B11A9008B6DAB /* Marker.swift */; };
+		5FA8121A281B123E008B6DAB /* MarkerCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA81219281B123E008B6DAB /* MarkerCollection.swift */; };
+		5FA81221281B1442008B6DAB /* MarkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA8121D281B141E008B6DAB /* MarkerTests.swift */; };
 		5F2F468F298DBC8500A1059B /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F468C298DBC8500A1059B /* Response.swift */; };
 		5F2F4692298DC9AA00A1059B /* Result+isError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F4691298DC9AA00A1059B /* Result+isError.swift */; };
 		5F5338AD295FA87300C1D9AE /* FilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5338AC295FA87300C1D9AE /* FilterTests.swift */; };
-		5F8C133E2969F851007BE2D5 /* StatusEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C133D2969F851007BE2D5 /* StatusEdit.swift */; };
-		5F8C133F2969F851007BE2D5 /* StatusEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C133D2969F851007BE2D5 /* StatusEdit.swift */; };
 		5F8C13402969F851007BE2D5 /* StatusEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C133D2969F851007BE2D5 /* StatusEdit.swift */; };
 		5FA81227281B185C008B6DAB /* ClientObserverList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA81226281B185C008B6DAB /* ClientObserverList.swift */; };
 		5FA81228281B185C008B6DAB /* ClientObserverList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA81226281B185C008B6DAB /* ClientObserverList.swift */; };
@@ -348,11 +347,15 @@
 		15861D2922B8451800C37885 /* PollsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollsTests.swift; sourceTree = "<group>"; };
 		15CAFCD822C1923E00444841 /* PollPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollPayload.swift; sourceTree = "<group>"; };
 		15CAFCDC22C1933A00444841 /* PollPayloadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollPayloadTests.swift; sourceTree = "<group>"; };
+		5FA81215281B11A9008B6DAB /* Marker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marker.swift; sourceTree = "<group>"; };
+		5FA81219281B123E008B6DAB /* MarkerCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerCollection.swift; sourceTree = "<group>"; };
+		5FA8121D281B141E008B6DAB /* MarkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerTests.swift; sourceTree = "<group>"; };
 		5F2F468C298DBC8500A1059B /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		5F2F4691298DC9AA00A1059B /* Result+isError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+isError.swift"; sourceTree = "<group>"; };
 		5F5338AC295FA87300C1D9AE /* FilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTests.swift; sourceTree = "<group>"; };
 		5F8C133D2969F851007BE2D5 /* StatusEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusEdit.swift; sourceTree = "<group>"; };
 		5FA81226281B185C008B6DAB /* ClientObserverList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientObserverList.swift; sourceTree = "<group>"; };
+		5FA8122A281B19C0008B6DAB /* Markers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Markers.json; sourceTree = "<group>"; };
 		62864F50213AF68900823C8A /* MastodonKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MastodonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		629A4B0E213AF5B100A6386E /* MastodonKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MastodonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"MastodonKit::MastodonKit::Product" /* MastodonKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MastodonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -522,34 +525,35 @@
 		155B4C8822C2B03B00C997F9 /* Fixtures */ = {
 			isa = PBXGroup;
 			children = (
-				155B4C8922C2B03B00C997F9 /* Reports.json */,
-				155B4C8A22C2B03B00C997F9 /* DomainBlocks.json */,
-				155B4C8B22C2B03B00C997F9 /* Empty.json */,
-				155B4C8C22C2B03B00C997F9 /* Relationship.json */,
-				155B4C8D22C2B03B00C997F9 /* Emoji.json */,
-				155B4C8E22C2B03B00C997F9 /* StatusWithNull.json */,
-				155B4C8F22C2B03B00C997F9 /* Report.json */,
-				155B4C9022C2B03B00C997F9 /* Mention.json */,
-				155B4C9122C2B03B00C997F9 /* Attachment.json */,
-				155B4C9222C2B03B00C997F9 /* Instance.json */,
-				155B4C9322C2B03B00C997F9 /* StatusWithoutNull.json */,
-				155B4C9422C2B03B00C997F9 /* Results.json */,
 				155B4C9522C2B03B00C997F9 /* Account.json */,
-				155B4C9622C2B03B00C997F9 /* Lists.json */,
-				155B4C9722C2B03B00C997F9 /* Card.json */,
-				155B4C9822C2B03B00C997F9 /* Timeline.json */,
-				155B4C9922C2B03B00C997F9 /* Relationships.json */,
-				155B4C9A22C2B03B00C997F9 /* Notifications.json */,
-				155B4C9B22C2B03B00C997F9 /* LoginSettings.json */,
-				155B4C9C22C2B03B00C997F9 /* Context.json */,
-				155B4C9D22C2B03B00C997F9 /* Notification.json */,
-				155B4C9E22C2B03B00C997F9 /* List.json */,
-				155B4C9F22C2B03B00C997F9 /* RequestError.json */,
-				155B4CA022C2B03B00C997F9 /* Tag.json */,
-				155B4CA122C2B03B00C997F9 /* ClientApplication.json */,
-				155B4CA222C2B03B00C997F9 /* Application.json */,
 				155B4CA322C2B03B00C997F9 /* Accounts.json */,
+				155B4CA222C2B03B00C997F9 /* Application.json */,
+				155B4C9122C2B03B00C997F9 /* Attachment.json */,
+				155B4C9722C2B03B00C997F9 /* Card.json */,
+				155B4CA122C2B03B00C997F9 /* ClientApplication.json */,
+				155B4C9C22C2B03B00C997F9 /* Context.json */,
+				155B4C8A22C2B03B00C997F9 /* DomainBlocks.json */,
+				155B4C8D22C2B03B00C997F9 /* Emoji.json */,
+				155B4C8B22C2B03B00C997F9 /* Empty.json */,
+				155B4C9222C2B03B00C997F9 /* Instance.json */,
+				155B4C9E22C2B03B00C997F9 /* List.json */,
+				155B4C9622C2B03B00C997F9 /* Lists.json */,
+				155B4C9B22C2B03B00C997F9 /* LoginSettings.json */,
+				155B4C9022C2B03B00C997F9 /* Mention.json */,
+				155B4C9D22C2B03B00C997F9 /* Notification.json */,
+				155B4C9A22C2B03B00C997F9 /* Notifications.json */,
 				155B4CA422C2B03B00C997F9 /* Poll.json */,
+				155B4C8C22C2B03B00C997F9 /* Relationship.json */,
+				155B4C9922C2B03B00C997F9 /* Relationships.json */,
+				155B4C8F22C2B03B00C997F9 /* Report.json */,
+				155B4C8922C2B03B00C997F9 /* Reports.json */,
+				155B4C9F22C2B03B00C997F9 /* RequestError.json */,
+				155B4C9422C2B03B00C997F9 /* Results.json */,
+				155B4C8E22C2B03B00C997F9 /* StatusWithNull.json */,
+				155B4C9322C2B03B00C997F9 /* StatusWithoutNull.json */,
+				155B4CA022C2B03B00C997F9 /* Tag.json */,
+				155B4C9822C2B03B00C997F9 /* Timeline.json */,
+				5FA8122A281B19C0008B6DAB /* Markers.json */,
 			);
 			path = Fixtures;
 			sourceTree = "<group>";
@@ -642,6 +646,8 @@
 				OBJ_35 /* Instance.swift */,
 				OBJ_36 /* List.swift */,
 				OBJ_37 /* LoginSettings.swift */,
+				5FA81215281B11A9008B6DAB /* Marker.swift */,
+				5FA81219281B123E008B6DAB /* MarkerCollection.swift */,
 				OBJ_38 /* Mention.swift */,
 				OBJ_39 /* Notification.swift */,
 				OBJ_40 /* NotificationType.swift */,
@@ -815,6 +821,7 @@
 				OBJ_112 /* TagTests.swift */,
 				OBJ_113 /* VisibilityTests.swift */,
 				151DF8B3222DFF8600DAEA7A /* PollTests.swift */,
+				5FA8121D281B141E008B6DAB /* MarkerTests.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1029,6 +1036,8 @@
 				154E44F922AE6EE200F9B815 /* Filter.swift in Sources */,
 				5F2F468F298DBC8500A1059B /* Response.swift in Sources */,
 				62864F32213AF68900823C8A /* Status.swift in Sources */,
+				5FA81218281B11A9008B6DAB /* Marker.swift in Sources */,
+				5FA8121C281B123E008B6DAB /* MarkerCollection.swift in Sources */,
 				62864F33213AF68900823C8A /* Tag.swift in Sources */,
 				62864F34213AF68900823C8A /* Visibility.swift in Sources */,
 				62864F35213AF68900823C8A /* Pagination.swift in Sources */,
@@ -1108,6 +1117,8 @@
 				154E44F822AE6EE200F9B815 /* Filter.swift in Sources */,
 				5F2F468E298DBC8500A1059B /* Response.swift in Sources */,
 				629A4AF0213AF5B100A6386E /* Status.swift in Sources */,
+				5FA81217281B11A9008B6DAB /* Marker.swift in Sources */,
+				5FA8121B281B123E008B6DAB /* MarkerCollection.swift in Sources */,
 				629A4AF1213AF5B100A6386E /* Tag.swift in Sources */,
 				629A4AF2213AF5B100A6386E /* Visibility.swift in Sources */,
 				629A4AF3213AF5B100A6386E /* Pagination.swift in Sources */,
@@ -1187,6 +1198,8 @@
 				154E44F722AE6EE200F9B815 /* Filter.swift in Sources */,
 				5F2F468D298DBC8500A1059B /* Response.swift in Sources */,
 				OBJ_179 /* Status.swift in Sources */,
+				5FA81216281B11A9008B6DAB /* Marker.swift in Sources */,
+				5FA8121A281B123E008B6DAB /* MarkerCollection.swift in Sources */,
 				OBJ_180 /* Tag.swift in Sources */,
 				OBJ_181 /* Visibility.swift in Sources */,
 				OBJ_182 /* Pagination.swift in Sources */,
@@ -1258,6 +1271,7 @@
 				OBJ_250 /* NotificationTests.swift in Sources */,
 				OBJ_251 /* NotificationTypeTests.swift in Sources */,
 				OBJ_252 /* RelationshipTests.swift in Sources */,
+				5FA81221281B1442008B6DAB /* MarkerTests.swift in Sources */,
 				OBJ_253 /* ReportTests.swift in Sources */,
 				OBJ_254 /* ResultsTests.swift in Sources */,
 				OBJ_255 /* StatusTests.swift in Sources */,
