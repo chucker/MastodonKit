@@ -17,18 +17,11 @@ class MastodonDateFormatter: DateFormatter {
     private let isoDateFormatter: ISO8601DateFormatter = {
         let dateFormatter = ISO8601DateFormatter()
         dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
-        if #available(macOS 10.13, *) {
             dateFormatter.formatOptions = [.withInternetDateTime,
                                            .withDashSeparatorInDate,
                                            .withColonSeparatorInTime,
                                            .withTimeZone,
                                            .withFractionalSeconds]
-        } else {
-            dateFormatter.formatOptions = [.withInternetDateTime,
-                                           .withDashSeparatorInDate,
-                                           .withColonSeparatorInTime,
-                                           .withTimeZone]
-        }
         return dateFormatter
     }()
 
