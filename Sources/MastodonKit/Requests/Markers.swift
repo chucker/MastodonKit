@@ -17,12 +17,7 @@ public enum Markers {
     /// - Parameter timelines: The timelines whose positions to retrieve.
     /// - Returns: Request for `MarkerCollection`.
     public static func all(timelines: [MarkerTimeline]) -> Request<MarkerCollection> {
-        /// there might be a better way of doing this in `Payload`, but I couldn't find it
-        let parameters = [
-            Parameter(name: "timeline", value: "[\"" + timelines.compactMap { $0.rawValue }
-                                                                .joined(separator: "\",\"") + "\"]")
-        ]
-        
+        let parameters = timelines.map(toArrayOfParameters(withName: "timeline"))
         let method = HTTPMethod.get(.parameters(parameters))
         return Request<MarkerCollection>(path: "/api/v1/markers", method: method)
     }
@@ -30,10 +25,15 @@ public enum Markers {
     public static func update(markers: MarkerCollection) -> Request<MarkerCollection> {
         // the API also lets us just update one or the other, but we don't implement that here
         
-        let parameters : [FormParameter] = [
-            Parameter(name: "home[last_read_id]", value: markers.home.lastReadId),
-            Parameter(name: "notifications[last_read_id]", value: markers.notifications.lastReadId)
-        ]
+        var parameters = [FormParameter]()
+        
+        if (markers.home != nil) {
+            parameters.append(Parameter(name: "home[last_read_id]", value: markers.home!.lastReadId))
+        }
+        
+        if (markers.notifications != nil) {
+            parameters.append(Parameter(name: "notifications[last_read_id]", value: markers.notifications!.lastReadId))
+        }
         
         let method = HTTPMethod.post(.form(parameters))
         return Request<MarkerCollection>(path: "/api/v1/markers", method: method)

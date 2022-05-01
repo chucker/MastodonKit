@@ -16,8 +16,8 @@ class MarkerTests: XCTestCase {
         XCTAssertNotNil(marker?.home)
         XCTAssertNotNil(marker?.notifications)
 
-        XCTAssertEqual(marker!.notifications.lastReadId, "35098814")
-        XCTAssertEqual(marker!.notifications.version, 361)
+        XCTAssertEqual(marker!.notifications!.lastReadId, "35098814")
+        XCTAssertEqual(marker!.notifications!.version, 361)
         
         var components = DateComponents()
         components.year = 2019
@@ -28,7 +28,7 @@ class MarkerTests: XCTestCase {
         components.second = 25
         components.nanosecond = 239_000_000
         components.timeZone = TimeZone(secondsFromGMT: 0)
-        XCTAssertEqual(marker!.notifications.updatedAt.timeIntervalSince1970,
+        XCTAssertEqual(marker!.notifications!.updatedAt.timeIntervalSince1970,
                        Calendar(identifier: .gregorian).date(from: components)!.timeIntervalSince1970,
                        accuracy: 0.001)
     }

@@ -18,7 +18,7 @@ class MarkersTests: XCTestCase {
         // Method
         XCTAssertEqual(request.method.name, "GET")
         XCTAssertEqual(request.method.queryItems?.count, 1)
-        let timelineQueryItem = URLQueryItem(name: "timeline", value: "[\"home\"]")
+        let timelineQueryItem = URLQueryItem(name: "timeline[]", value: "home")
         XCTAssertTrue(request.method.queryItems!.contains(timelineQueryItem))
         XCTAssertNil(request.method.httpBody)
     }

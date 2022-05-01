@@ -9,8 +9,8 @@ import Foundation
 
 public class MarkerCollection: Codable {
     /** Information about the user's position in the home timeline. */
-    public let home: Marker
+    public let home: Marker?
     
     /** Information about the user's position in their notifications. */
-    public let notifications: Marker
+    public let notifications: Marker?
 }
