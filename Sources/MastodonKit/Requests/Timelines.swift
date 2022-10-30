@@ -34,7 +34,20 @@ public enum Timelines {
 
         return Request<[Status]>(path: "/api/v1/timelines/public", method: method)
     }
+    
+    /// Retrieves a list timeline.
+    ///
+    /// - Parameters:
+    ///   - id: The list id.
+    ///   - range: The bounds used when requesting data from Mastodon.
+    /// - Returns: Request for `[Status]`.
+    public static func list(_ id: String, range: RequestRange = .default) -> Request<[Status]> {
+        let rangeParameters = range.parameters(limit: between(1, and: 40, default: 20)) ?? []
+        let method = HTTPMethod.get(.parameters(rangeParameters))
 
+        return Request<[Status]>(path: "/api/v1/timelines/list/\(id)", method: method)
+    }
+    
     /// Retrieves a tag timeline.
     ///
     /// - Parameters:
