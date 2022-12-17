@@ -27,7 +27,7 @@ public enum Login {
         let parameters: [String: AnyEncodable] = [
             "client_id": AnyEncodable(clientID),
             "client_secret": AnyEncodable(clientSecret),
-            "scope": AnyEncodable(scopes.map(toString)),
+            "scope": AnyEncodable(scopes.map(toString).joined(separator: " ")),
             "grant_type": AnyEncodable("password"),
             "username": AnyEncodable(username),
             "password": AnyEncodable(password)
@@ -54,7 +54,7 @@ public enum Login {
         let parameters: [String: AnyEncodable] = [
             "client_id": AnyEncodable(clientID),
             "client_secret": AnyEncodable(clientSecret),
-            "scope": AnyEncodable(scopes.map(toString)),
+            "scope": AnyEncodable(scopes.map(toString).joined(separator: " ")),
             "grant_type": AnyEncodable("authorization_code"),
             "redirect_uri": AnyEncodable(redirectURI),
             "code": AnyEncodable(code)
