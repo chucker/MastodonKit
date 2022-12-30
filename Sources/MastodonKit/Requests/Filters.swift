@@ -86,7 +86,7 @@ public enum FilterRequests {
         var parameters = [
             Parameter(name: "phrase", value: phrase),
             Parameter(name: "irreversible", value: irreversible.flatMap(trueOrNil)),
-            Parameter(name: "wholeWord", value: wholeWord.flatMap(trueOrNil)),
+            Parameter(name: "whole_word", value: wholeWord.flatMap(trueOrNil)),
             Parameter(name: "expires_in", value: expiresIn.map { "\(Int($0.timeIntervalSinceNow))" })
         ]
 
