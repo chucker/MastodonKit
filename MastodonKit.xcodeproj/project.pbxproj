@@ -44,6 +44,7 @@
 		15CAFCDA22C1923E00444841 /* PollPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CAFCD822C1923E00444841 /* PollPayload.swift */; };
 		15CAFCDB22C1923E00444841 /* PollPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CAFCD822C1923E00444841 /* PollPayload.swift */; };
 		15CAFCDD22C1933A00444841 /* PollPayloadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CAFCDC22C1933A00444841 /* PollPayloadTests.swift */; };
+		5F5338AD295FA87300C1D9AE /* FilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5338AC295FA87300C1D9AE /* FilterTests.swift */; };
 		5FA81227281B185C008B6DAB /* ClientObserverList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA81226281B185C008B6DAB /* ClientObserverList.swift */; };
 		5FA81228281B185C008B6DAB /* ClientObserverList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA81226281B185C008B6DAB /* ClientObserverList.swift */; };
 		5FA81229281B185C008B6DAB /* ClientObserverList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA81226281B185C008B6DAB /* ClientObserverList.swift */; };
@@ -343,6 +344,7 @@
 		15861D2922B8451800C37885 /* PollsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollsTests.swift; sourceTree = "<group>"; };
 		15CAFCD822C1923E00444841 /* PollPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollPayload.swift; sourceTree = "<group>"; };
 		15CAFCDC22C1933A00444841 /* PollPayloadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollPayloadTests.swift; sourceTree = "<group>"; };
+		5F5338AC295FA87300C1D9AE /* FilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTests.swift; sourceTree = "<group>"; };
 		5FA81226281B185C008B6DAB /* ClientObserverList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientObserverList.swift; sourceTree = "<group>"; };
 		62864F50213AF68900823C8A /* MastodonKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MastodonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		629A4B0E213AF5B100A6386E /* MastodonKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MastodonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -565,6 +567,7 @@
 				OBJ_124 /* FavouritesTests.swift */,
 				OBJ_125 /* FollowRequestsTests.swift */,
 				OBJ_126 /* InstancesTests.swift */,
+				5F5338AC295FA87300C1D9AE /* FilterTests.swift */,
 				OBJ_127 /* ListsTests.swift */,
 				OBJ_128 /* LoginTests.swift */,
 				OBJ_129 /* MediaTests.swift */,
@@ -1246,6 +1249,7 @@
 				OBJ_261 /* ParameterTests.swift in Sources */,
 				OBJ_262 /* PayloadTests.swift in Sources */,
 				OBJ_263 /* RequestRangeTests.swift in Sources */,
+				5F5338AD295FA87300C1D9AE /* FilterTests.swift in Sources */,
 				OBJ_264 /* AccountsTests.swift in Sources */,
 				OBJ_265 /* BlocksTests.swift in Sources */,
 				OBJ_266 /* ClientsTests.swift in Sources */,

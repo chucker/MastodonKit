@@ -85,8 +85,8 @@ public enum FilterRequests {
                                        expiresIn: Date? = nil) -> Payload {
         var parameters = [
             Parameter(name: "phrase", value: phrase),
-            Parameter(name: "irreversible", value: irreversible.flatMap(trueOrNil)),
-            Parameter(name: "whole_word", value: wholeWord.flatMap(trueOrNil)),
+            Parameter(name: "irreversible", value: irreversible.flatMap(toString)),
+            Parameter(name: "whole_word", value: wholeWord.flatMap(toString)),
             Parameter(name: "expires_in", value: expiresIn.map { "\(Int($0.timeIntervalSinceNow))" })
         ]
 
