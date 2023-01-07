@@ -61,6 +61,8 @@ public class Status: Codable {
     public let card: Card?
     /// A poll
     public let poll: Poll?
+    /// Timestamp of when the status was last edited.
+    public let editedAt: Date?
 
     private enum CodingKeys: String, CodingKey {
         case id
@@ -89,6 +91,7 @@ public class Status: Codable {
         case pinned
         case card
         case poll
+        case editedAt = "edited_at"
     }
 
     public func markAsPinned() {
