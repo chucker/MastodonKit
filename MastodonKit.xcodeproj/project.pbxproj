@@ -45,6 +45,10 @@
 		15CAFCDB22C1923E00444841 /* PollPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CAFCD822C1923E00444841 /* PollPayload.swift */; };
 		15CAFCDD22C1933A00444841 /* PollPayloadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CAFCDC22C1933A00444841 /* PollPayloadTests.swift */; };
 		5F5338AD295FA87300C1D9AE /* FilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5338AC295FA87300C1D9AE /* FilterTests.swift */; };
+		5F8C133E2969F851007BE2D5 /* StatusEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C133D2969F851007BE2D5 /* StatusEdit.swift */; };
+		5F8C133F2969F851007BE2D5 /* StatusEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C133D2969F851007BE2D5 /* StatusEdit.swift */; };
+		5F8C13402969F851007BE2D5 /* StatusEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C133D2969F851007BE2D5 /* StatusEdit.swift */; };
+		5F8C13412969F851007BE2D5 /* StatusEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C133D2969F851007BE2D5 /* StatusEdit.swift */; };
 		5FA81227281B185C008B6DAB /* ClientObserverList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA81226281B185C008B6DAB /* ClientObserverList.swift */; };
 		5FA81228281B185C008B6DAB /* ClientObserverList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA81226281B185C008B6DAB /* ClientObserverList.swift */; };
 		5FA81229281B185C008B6DAB /* ClientObserverList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA81226281B185C008B6DAB /* ClientObserverList.swift */; };
@@ -345,6 +349,7 @@
 		15CAFCD822C1923E00444841 /* PollPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollPayload.swift; sourceTree = "<group>"; };
 		15CAFCDC22C1933A00444841 /* PollPayloadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollPayloadTests.swift; sourceTree = "<group>"; };
 		5F5338AC295FA87300C1D9AE /* FilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTests.swift; sourceTree = "<group>"; };
+		5F8C133D2969F851007BE2D5 /* StatusEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusEdit.swift; sourceTree = "<group>"; };
 		5FA81226281B185C008B6DAB /* ClientObserverList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientObserverList.swift; sourceTree = "<group>"; };
 		62864F50213AF68900823C8A /* MastodonKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MastodonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		629A4B0E213AF5B100A6386E /* MastodonKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MastodonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -641,6 +646,7 @@
 				OBJ_45 /* Status.swift */,
 				OBJ_46 /* Tag.swift */,
 				OBJ_47 /* Visibility.swift */,
+				5F8C133D2969F851007BE2D5 /* StatusEdit.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -983,6 +989,7 @@
 				62864F18213AF68900823C8A /* String.swift in Sources */,
 				62864F19213AF68900823C8A /* URLComponents.swift in Sources */,
 				62864F1A213AF68900823C8A /* URLRequest.swift in Sources */,
+				5F8C13402969F851007BE2D5 /* StatusEdit.swift in Sources */,
 				62864F1B213AF68900823C8A /* Functions.swift in Sources */,
 				62864F1C213AF68900823C8A /* HTTPMethod.swift in Sources */,
 				62864F1D213AF68900823C8A /* MediaAttachment.swift in Sources */,
@@ -1061,6 +1068,7 @@
 				629A4AD6213AF5B100A6386E /* String.swift in Sources */,
 				629A4AD7213AF5B100A6386E /* URLComponents.swift in Sources */,
 				629A4AD8213AF5B100A6386E /* URLRequest.swift in Sources */,
+				5F8C133F2969F851007BE2D5 /* StatusEdit.swift in Sources */,
 				629A4AD9213AF5B100A6386E /* Functions.swift in Sources */,
 				629A4ADA213AF5B100A6386E /* HTTPMethod.swift in Sources */,
 				629A4ADB213AF5B100A6386E /* MediaAttachment.swift in Sources */,
@@ -1139,6 +1147,7 @@
 				OBJ_153 /* String.swift in Sources */,
 				OBJ_154 /* URLComponents.swift in Sources */,
 				OBJ_155 /* URLRequest.swift in Sources */,
+				5F8C133E2969F851007BE2D5 /* StatusEdit.swift in Sources */,
 				OBJ_156 /* Functions.swift in Sources */,
 				OBJ_157 /* HTTPMethod.swift in Sources */,
 				OBJ_158 /* MediaAttachment.swift in Sources */,
@@ -1226,6 +1235,7 @@
 				OBJ_240 /* CardTests.swift in Sources */,
 				OBJ_241 /* ClientApplicationTests.swift in Sources */,
 				OBJ_242 /* ContextTests.swift in Sources */,
+				5F8C13412969F851007BE2D5 /* StatusEdit.swift in Sources */,
 				OBJ_243 /* EmojiTests.swift in Sources */,
 				OBJ_244 /* EmptyTests.swift in Sources */,
 				OBJ_245 /* InstanceTests.swift in Sources */,

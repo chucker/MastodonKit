@@ -25,6 +25,14 @@ public enum Statuses {
     public static func context(id: String) -> Request<Context> {
         return Request<Context>(path: "/api/v1/statuses/\(id)/context")
     }
+    
+    /// Gets the edit history of a status.
+    ///
+    /// - Parameter id: The status id.
+    /// - Returns: Request for `[StatusEdit]`.
+    public static func history(id: String) -> Request<[StatusEdit]> {
+        return Request<[StatusEdit]>(path: "/api/v1/statuses/\(id)/history")
+    }
 
     /// Gets a card associated with a status.
     ///
