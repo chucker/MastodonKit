@@ -25,7 +25,7 @@ public enum Statuses {
     public static func context(id: String) -> Request<Context> {
         return Request<Context>(path: "/api/v1/statuses/\(id)/context")
     }
-    
+
     /// Gets the edit history of a status.
     ///
     /// - Parameter id: The status id.
@@ -84,7 +84,8 @@ public enum Statuses {
                               sensitive: Bool? = nil,
                               spoilerText: String? = nil,
                               poll: PollPayload? = nil,
-                              visibility: Visibility = .public) -> Request<Status> {
+                              visibility: Visibility = .public) -> Request<Status>
+    {
         let parameters: [String: AnyEncodable?] = [
             "status": AnyEncodable(status),
             "in_reply_to_id": replyToID.map { AnyEncodable($0) },
