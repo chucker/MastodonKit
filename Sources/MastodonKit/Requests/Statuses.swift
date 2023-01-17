@@ -100,6 +100,34 @@ public enum Statuses {
         return Request<Status>(path: "/api/v1/statuses", method: method)
     }
 
+    /// Edits an existing status.
+    ///
+    /// - Parameters:
+    ///   - status: The text of the status.
+    ///   - mediaIDs: The array of media IDs to attach to the status (maximum 4).
+    ///   - sensitive: Marks the status as NSFW.
+    ///   - spoilerText: the text to be shown as a warning before the actual content.
+    ///   - visibility: The status' visibility.
+    /// - Returns: Request for `Status`.
+    public static func edit(id: String,
+                            status: String,
+                            mediaIDs: [String] = [],
+                            sensitive: Bool? = nil,
+                            spoilerText: String? = nil,
+                            poll: PollPayload? = nil) -> Request<Status>
+    {
+        let parameters: [String: AnyEncodable?] = [
+            "status": AnyEncodable(status),
+            "sensitive": (sensitive ?? false) ? AnyEncodable(true) : nil,
+            "spoiler_text": spoilerText.map { AnyEncodable($0) },
+            "media_ids": mediaIDs.isEmpty ? nil : AnyEncodable(mediaIDs),
+            "poll": poll.map { AnyEncodable($0) }
+        ]
+
+        let method = HTTPMethod.put(.json(encoding: parameters.compactMapValues { $0 }))
+        return Request<Status>(path: "/api/v1/statuses/\(id)", method: method)
+    }
+
     /// Deletes a status.
     ///
     /// - Parameter id: The status id.
