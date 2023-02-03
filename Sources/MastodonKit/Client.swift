@@ -123,14 +123,17 @@ public class Client: ClientType {
             run(requestProvider(pagination)) { result in
 
                 switch result {
-                case .success(let partialResult, let newPagination):
+                case .success(let success):
+                    let partialResult = success.value,
+                        newPagination = success.pagination
+
                     aggregationQueue.async {
                         aggregateResults.append(contentsOf: partialResult)
 
                         if !partialResult.isEmpty, let pagination = newPagination, pagination.next != nil {
                             fetchPage(pagination: pagination)
                         } else {
-                            completion(.success(aggregateResults, nil))
+                            completion(.success(.init(value: aggregateResults, pagination: nil)))
                         }
                     }
 
