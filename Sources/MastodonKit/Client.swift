@@ -9,7 +9,6 @@
 import Foundation
 
 public class Client: ClientType {
-
     private let session: URLSession
     private var retryQueue: OperationQueue?
     private let observers = ClientObserverList()
@@ -26,26 +25,26 @@ public class Client: ClientType {
     public required init(baseURL: String,
                          accessToken: String? = nil,
                          session: URLSession = .shared,
-                         delegate: ClientDelegate? = nil) {
+                         delegate: ClientDelegate? = nil)
+    {
         self.baseURL = baseURL
         self.session = session
         self.accessToken = accessToken
         self.delegate = delegate
     }
 
-    @discardableResult
     public func run<Model: Codable>(_ request: Request<Model>,
                                     resumeImmediately: Bool,
-                                    completion: @escaping (Result<Model>) -> Void) -> FutureTask? {
+                                    completion: @escaping (Result<Response<Model>, Error>) -> Void) -> FutureTask?
+    {
         run(request, existingFuture: nil, resumeImmediately: resumeImmediately, completion: completion)
     }
 
-    @discardableResult
     private func run<Model: Codable>(_ request: Request<Model>,
                                      existingFuture: FutureTask?,
                                      resumeImmediately: Bool,
-                                     completion: @escaping (Result<Model>) -> Void) -> FutureTask? {
-
+                                     completion: @escaping (Result<Response<Model>, Error>) -> Void) -> FutureTask?
+    {
         guard delegate?.isRequestingNewAccessToken != true else {
             let future = FutureTask()
             scheduleRequestForRetry(request, future: future, completion: completion)
@@ -65,7 +64,7 @@ public class Client: ClientType {
 
         let task = session.dataTask(with: urlRequest) { [delegate, weak self] data, response, error in
             if let error = error {
-                completion(.failure(.genericError(error as NSError)))
+                completion(.failure(error))
                 return
             }
 
@@ -83,25 +82,26 @@ public class Client: ClientType {
                     if let self = self, self.accessToken != nil, delegate?.isRequestingNewAccessToken == true {
                         self.scheduleRequestForRetry(request, future: future, completion: completion)
                     } else {
-                        completion(.failure(.unauthorized))
+                        completion(.failure(ClientError.unauthorized))
                     }
                     return
                 }
                 let mastodonError = try? MastodonError.decode(data: data)
                 let error: ClientError = mastodonError.map { .mastodonError($0.description) }
-                                        ?? .badStatus(statusCode: (response as? HTTPURLResponse)?.statusCode ?? -1)
+                    ?? .badStatus(statusCode: (response as? HTTPURLResponse)?.statusCode ?? -1)
                 completion(.failure(error))
                 return
             }
 
-            do {
-                completion(.success(try Model.decode(data: data), httpResponse.pagination))
-            } catch let parseError {
+            guard let model = try? Model.decode(data: data) else {
                 #if DEBUG
                 NSLog("Parse error: \(parseError)")
                 #endif
                 completion(.failure(ClientError.invalidModel))
+                return
             }
+
+            completion(.success(.init(value: model, pagination: httpResponse.pagination)))
         }
 
         future.task = task
@@ -114,8 +114,8 @@ public class Client: ClientType {
     }
 
     public func runAndAggregateAllPages<Model: Codable>(requestProvider: @escaping (Pagination) -> Request<[Model]>,
-                                                        completion: @escaping (Result<[Model]>) -> Void) {
-
+                                                        completion: @escaping (Result<Response<Model>, Error>) -> Void)
+    {
         let aggregationQueue = DispatchQueue(label: "Aggregation", qos: .utility)
         var aggregateResults: [Model] = []
 
@@ -157,8 +157,8 @@ public class Client: ClientType {
 
     private func scheduleRequestForRetry<Model>(_ request: Request<Model>,
                                                 future: FutureTask,
-                                                completion: @escaping (Result<Model>) -> Void) {
-
+                                                completion: @escaping (Result<Response<Model>, Error>) -> Void)
+    {
         let queue = retryQueue ?? {
             let queue = OperationQueue()
             queue.qualityOfService = .background
@@ -176,10 +176,8 @@ public class Client: ClientType {
     }
 
     private func accessTokenDidChange() {
-
         if let accessToken = accessToken {
-
-            observers.allObservers.forEach({ $0.client(self, didUpdate: accessToken) })
+            observers.allObservers.forEach { $0.client(self, didUpdate: accessToken) }
 
             if let queue = retryQueue, queue.operationCount > 0 {
                 queue.isSuspended = false
