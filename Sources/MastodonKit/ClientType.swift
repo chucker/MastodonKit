@@ -46,7 +46,7 @@ public protocol ClientType {
     ///   - completion: The completion block to be called when the request is complete.
     ///   - result: The request result.
     func runAndAggregateAllPages<Model: Codable>(requestProvider: @escaping (Pagination) -> Request<[Model]>,
-                                                 completion: @escaping (Result<Response<Model>, Error>) -> Void)
+                                                 completion: @escaping (Result<Response<[Model]>, Error>) -> Void)
 
     /// Adds a new observer to the receiver. The receiver keeps a weak reference to the observer, and thus calling
     /// `removeObserver(_:)` is not required if the observer is going to be released.

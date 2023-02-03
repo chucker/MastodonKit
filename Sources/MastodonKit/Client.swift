@@ -112,9 +112,9 @@ public class Client: ClientType {
 
         return future
     }
-
+    
     public func runAndAggregateAllPages<Model: Codable>(requestProvider: @escaping (Pagination) -> Request<[Model]>,
-                                                        completion: @escaping (Result<Response<Model>, Error>) -> Void)
+                                                        completion: @escaping (Result<Response<[Model]>, Error>) -> Void)
     {
         let aggregationQueue = DispatchQueue(label: "Aggregation", qos: .utility)
         var aggregateResults: [Model] = []
