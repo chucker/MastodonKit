@@ -93,15 +93,14 @@ public class Client: ClientType {
                 return
             }
 
-            guard let model = try? Model.decode(data: data) else {
-                #if DEBUG
+            do { let model = try Model.decode(data: data)
+                completion(.success(.init(value: model, pagination: httpResponse.pagination)))
+            } catch let parseError {
+#if DEBUG
                 NSLog("Parse error: \(parseError)")
-                #endif
+#endif
                 completion(.failure(ClientError.invalidModel))
-                return
             }
-
-            completion(.success(.init(value: model, pagination: httpResponse.pagination)))
         }
 
         future.task = task
@@ -112,7 +111,7 @@ public class Client: ClientType {
 
         return future
     }
-    
+
     public func runAndAggregateAllPages<Model: Codable>(requestProvider: @escaping (Pagination) -> Request<[Model]>,
                                                         completion: @escaping (Result<Response<[Model]>, Error>) -> Void)
     {
