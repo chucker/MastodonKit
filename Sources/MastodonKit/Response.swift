@@ -11,4 +11,9 @@ import Foundation
 public struct Response<Model> {
     public let value: Model
     public let pagination: Pagination?
+    
+    public init(value: Model, pagination: Pagination?) {
+        self.value = value
+        self.pagination = pagination
+    }
 }
