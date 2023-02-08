@@ -111,6 +111,17 @@ public class Client: ClientType {
 
         return future
     }
+    
+#if compiler(>=5.6.0) && canImport(_Concurrency)
+     @available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
+     public func run<Model>(_ request: Request<Model>) async throws -> Response<Model> {
+         try await withCheckedThrowingContinuation { continuation in
+             run(request) { result in
+                 continuation.resume(with: result)
+             }
+         }
+     }
+ #endif
 
     public func runAndAggregateAllPages<Model: Codable>(requestProvider: @escaping (Pagination) -> Request<[Model]>,
                                                         completion: @escaping (Result<Response<[Model]>, Error>) -> Void)

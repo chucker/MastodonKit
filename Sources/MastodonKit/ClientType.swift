@@ -39,6 +39,11 @@ public protocol ClientType {
                     resumeImmediately: Bool,
                     completion: @escaping (_ result: Result<Response<Model>, Error>) -> Void) -> FutureTask?
 
+#if compiler(>=5.5) && canImport(_Concurrency)
+     @available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
+     func run<Model>(_ request: Request<Model>) async throws -> Response<Model>
+ #endif
+    
     /// Performs several network requests and aggregates their results.
     ///
     /// - Parameters:
