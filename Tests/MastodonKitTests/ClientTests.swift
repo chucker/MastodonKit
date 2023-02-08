@@ -6,8 +6,8 @@
 //  Copyright © 2017 MastodonKit. All rights reserved.
 //
 
-import XCTest
 @testable import MastodonKit
+import XCTest
 
 // swiftlint:disable single_test_class
 
@@ -41,7 +41,12 @@ class ClientInitializationWithInvalidURLTests: XCTestCase {
         var passedError: Error?
 
         client.run(Timelines.home()) { result in
-            passedError = result.error
+            switch result {
+            case .failure(let error):
+                passedError = error
+            default:
+                break
+            }
         }
 
         XCTAssertEqual(passedError?.localizedDescription, ClientError.malformedURL.localizedDescription)
@@ -50,7 +55,7 @@ class ClientInitializationWithInvalidURLTests: XCTestCase {
 
 class ClientRunTests: XCTestCase {
     let mockSession = MockURLSession()
-    var result: Result<[Status]>?
+    var result: Result<Response<[Status]>, Error>?
 
     override func setUp() {
         super.setUp()
@@ -84,13 +89,23 @@ class ClientRunTests: XCTestCase {
 
         mockSession.lastCompletionHandler?(nil, nil, mockError)
 
-        XCTAssertEqual(result?.error?.localizedDescription, "Networking error: \(mockError.localizedDescription)")
+        switch result {
+        case .failure(let error):
+            XCTAssertEqual(error.localizedDescription, "Networking error: \(mockError.localizedDescription)")
+        default:
+            XCTFail()
+        }
     }
 
     func testDataTaskCompletionBlockWithMissingData() {
         mockSession.lastCompletionHandler?(nil, nil, nil)
 
-        XCTAssertEqual(result?.error?.localizedDescription, ClientError.malformedJSON.localizedDescription)
+        switch result {
+        case .failure(let error):
+            XCTAssertEqual(error.localizedDescription, ClientError.malformedJSON.localizedDescription)
+        default:
+            XCTFail()
+        }
     }
 
     func testDataTaskCompletionBlockWithMastodonError() {
@@ -99,11 +114,17 @@ class ClientRunTests: XCTestCase {
             url: URL(string: "https://my.mastodon.instance/api/v1/timelines/home")!,
             statusCode: 403,
             httpVersion: nil,
-            headerFields: nil)
+            headerFields: nil
+        )
 
         mockSession.lastCompletionHandler?(fixture, response, nil)
 
-        XCTAssertEqual(result?.error?.localizedDescription, ClientError.mastodonError("yes, it's an error.").localizedDescription)
+        switch result {
+        case .failure(let error):
+            XCTAssertEqual(error.localizedDescription, ClientError.mastodonError("yes, it's an error.").localizedDescription)
+        default:
+            XCTFail()
+        }
     }
 
     func testDataTaskCompletionBlockWithInvalidModel() {
@@ -112,11 +133,17 @@ class ClientRunTests: XCTestCase {
             url: URL(string: "https://my.mastodon.instance/api/v1/timelines/home")!,
             statusCode: 200,
             httpVersion: nil,
-            headerFields: nil)
+            headerFields: nil
+        )
 
         mockSession.lastCompletionHandler?(fixture, response, nil)
 
-        XCTAssertEqual(result?.error?.localizedDescription, ClientError.invalidModel.localizedDescription)
+        switch result {
+        case .failure(let error):
+            XCTAssertEqual(error.localizedDescription, ClientError.invalidModel.localizedDescription)
+        default:
+            XCTFail()
+        }
     }
 
     func testDataTaskCompletionBlockWithSuccessWithoutHeaderLink() {
@@ -130,8 +157,13 @@ class ClientRunTests: XCTestCase {
 
         mockSession.lastCompletionHandler?(fixture, response, nil)
 
-        XCTAssertEqual(result?.value?.count, 2)
-        XCTAssertNil(result?.pagination)
+        switch result {
+        case .success(let response):
+            XCTAssertEqual(response.value.count, 2)
+            XCTAssertNil(response.pagination)
+        default:
+            XCTFail()
+        }
     }
 
     func testDataTaskCompletionBlockWithSuccessWithHeaderLink() {
@@ -150,8 +182,13 @@ class ClientRunTests: XCTestCase {
 
         mockSession.lastCompletionHandler?(fixture, response, nil)
 
-        XCTAssertEqual(result?.value?.count, 2)
-        XCTAssertNotNil(result?.pagination)
+        switch result {
+        case .success(let response):
+            XCTAssertEqual(response.value.count, 2)
+            XCTAssertNotNil(response.pagination)
+        default:
+            XCTFail()
+        }
     }
 
     func testNotFoundResponse() {
@@ -160,7 +197,12 @@ class ClientRunTests: XCTestCase {
 
         mockSession.lastCompletionHandler?(Data(), mockResponse, nil)
 
-        XCTAssertEqual(result?.error?.localizedDescription, ClientError.badStatus(statusCode: 404).localizedDescription)
+        switch result {
+        case .failure(let error):
+            XCTAssertEqual(error.localizedDescription, ClientError.badStatus(statusCode: 404).localizedDescription)
+        default:
+            XCTFail()
+        }
     }
 
     func testUnauthorizedResponse() {
@@ -169,7 +211,12 @@ class ClientRunTests: XCTestCase {
 
         mockSession.lastCompletionHandler?(Data(), mockResponse, nil)
 
-        XCTAssertEqual(result?.error?.localizedDescription, ClientError.unauthorized.localizedDescription)
+        switch result {
+        case .failure(let error):
+            XCTAssertEqual(error.localizedDescription, ClientError.unauthorized.localizedDescription)
+        default:
+            XCTFail()
+        }
     }
 }
 
@@ -260,9 +307,8 @@ class ClientRunWithGetAndQueryItemsTests: XCTestCase {
 }
 
 class ClientDelegateTests: XCTestCase {
-
     let mockSession = MockURLSession()
-    var result: Result<[Status]>?
+    var result: Result<Response<[Status]>, Error>?
     let delegateMock = MockClientDelegate()
     var client: ClientType?
     var future: FutureTask?
@@ -279,7 +325,6 @@ class ClientDelegateTests: XCTestCase {
     }
 
     func testUnauthorizedErrorDelegateCall() {
-
         future = client!.run(Timelines.home(), resumeImmediately: true) { result in
             self.result = result
         }
@@ -297,7 +342,6 @@ class ClientDelegateTests: XCTestCase {
     }
 
     func testUnauthorizedErrorAutomaticRetryCall() {
-
         future = client!.run(Timelines.home(), resumeImmediately: true) { result in
             self.result = result
         }
@@ -327,7 +371,6 @@ class ClientDelegateTests: XCTestCase {
     }
 
     func testUnauthorizedErrorAutomaticRetryForMultipleRequestsCall() {
-
         var client = self.client!
 
         delegateMock.producedUnauthorizedErrorHandler = { [unowned self] _ in

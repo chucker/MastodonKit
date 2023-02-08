@@ -6,35 +6,48 @@
 //  Copyright © 2017 MastodonKit. All rights reserved.
 //
 
-import XCTest
 @testable import MastodonKit
+import XCTest
 
 class ResultTests: XCTestCase {
     func testSuccessWithoutPagination() {
-        let result = Result.success("foo", nil)
+        let result = Result<Response, Error>.success(Response(value: "foo", pagination: nil))
 
-        XCTAssertEqual(result.value, "foo")
-        XCTAssertNil(result.pagination)
-        XCTAssertNil(result.error)
         XCTAssertFalse(result.isError)
+
+        switch result {
+        case .success(let response):
+            XCTAssertEqual(response.value, "foo")
+            XCTAssertNil(response.pagination)
+        default:
+            XCTFail()
+        }
     }
 
     func testSuccessWithPagination() {
         let pagination = Pagination(next: .default, previous: .limit(42))
-        let result = Result.success("foo", pagination)
+        let result = Result<Response, Error>.success(Response(value: "foo", pagination: pagination))
 
-        XCTAssertEqual(result.value, "foo")
-        XCTAssertEqual(result.pagination, pagination)
-        XCTAssertNil(result.error)
         XCTAssertFalse(result.isError)
+
+        switch result {
+        case .success(let response):
+            XCTAssertEqual(response.value, "foo")
+            XCTAssertEqual(response.pagination, pagination)
+        default:
+            XCTFail()
+        }
     }
 
     func testError() {
-        let result = Result<Any>.failure(ClientError.malformedURL)
+        let result = Result<Response<Any>, Error>.failure(ClientError.malformedURL)
 
-        XCTAssertNil(result.value)
-        XCTAssertNil(result.pagination)
-        XCTAssertNotNil(result.error)
-        XCTAssertTrue(result.isError)
+        switch result {
+        case .failure(let error):
+            XCTAssertNotNil(error)
+            XCTAssertTrue(result.isError)
+        default:
+            XCTFail()
+        }
     }
 }
