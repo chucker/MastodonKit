@@ -17,6 +17,12 @@ public class Marker: Codable {
     /** Used for locking to prevent write conflicts. */
     public let version: Int
     
+    public init(lastReadStatus: Status) {
+        self.lastReadId = lastReadStatus.id
+        self.updatedAt = Date.now
+        self.version = 1
+    }
+    
     private enum CodingKeys: String, CodingKey {
         case lastReadId = "last_read_id"
         case updatedAt = "updated_at"

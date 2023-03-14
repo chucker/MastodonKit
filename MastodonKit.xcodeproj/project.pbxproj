@@ -44,6 +44,10 @@
 		15CAFCDA22C1923E00444841 /* PollPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CAFCD822C1923E00444841 /* PollPayload.swift */; };
 		15CAFCDB22C1923E00444841 /* PollPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CAFCD822C1923E00444841 /* PollPayload.swift */; };
 		15CAFCDD22C1933A00444841 /* PollPayloadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CAFCDC22C1933A00444841 /* PollPayloadTests.swift */; };
+		5F2F468F298DBC8500A1059B /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F468C298DBC8500A1059B /* Response.swift */; };
+		5F2F4692298DC9AA00A1059B /* Result+isError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F4691298DC9AA00A1059B /* Result+isError.swift */; };
+		5F5338AD295FA87300C1D9AE /* FilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5338AC295FA87300C1D9AE /* FilterTests.swift */; };
+		5F8C13402969F851007BE2D5 /* StatusEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C133D2969F851007BE2D5 /* StatusEdit.swift */; };
 		5F944324281C789D00683F85 /* MarkerTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F944323281C789D00683F85 /* MarkerTimeline.swift */; };
 		5F944325281C789D00683F85 /* MarkerTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F944323281C789D00683F85 /* MarkerTimeline.swift */; };
 		5F944326281C789D00683F85 /* MarkerTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F944323281C789D00683F85 /* MarkerTimeline.swift */; };
@@ -51,16 +55,16 @@
 		5FA81216281B11A9008B6DAB /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA81215281B11A9008B6DAB /* Marker.swift */; };
 		5FA8121A281B123E008B6DAB /* MarkerCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA81219281B123E008B6DAB /* MarkerCollection.swift */; };
 		5FA81221281B1442008B6DAB /* MarkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA8121D281B141E008B6DAB /* MarkerTests.swift */; };
-		5F2F468F298DBC8500A1059B /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F468C298DBC8500A1059B /* Response.swift */; };
-		5F2F4692298DC9AA00A1059B /* Result+isError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F4691298DC9AA00A1059B /* Result+isError.swift */; };
-		5F5338AD295FA87300C1D9AE /* FilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5338AC295FA87300C1D9AE /* FilterTests.swift */; };
-		5F8C13402969F851007BE2D5 /* StatusEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C133D2969F851007BE2D5 /* StatusEdit.swift */; };
 		5FA81227281B185C008B6DAB /* ClientObserverList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA81226281B185C008B6DAB /* ClientObserverList.swift */; };
 		5FA81228281B185C008B6DAB /* ClientObserverList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA81226281B185C008B6DAB /* ClientObserverList.swift */; };
 		5FA81229281B185C008B6DAB /* ClientObserverList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA81226281B185C008B6DAB /* ClientObserverList.swift */; };
 		5FA8122D281B25AC008B6DAB /* Markers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA8122C281B25AC008B6DAB /* Markers.swift */; };
 		5FA8122E281B25AC008B6DAB /* Markers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA8122C281B25AC008B6DAB /* Markers.swift */; };
 		5FA8122F281B25AC008B6DAB /* Markers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA8122C281B25AC008B6DAB /* Markers.swift */; };
+		5FC21CF129C1193F00A582A8 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F468C298DBC8500A1059B /* Response.swift */; };
+		5FC21CF229C1194000A582A8 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F468C298DBC8500A1059B /* Response.swift */; };
+		5FC21CF329C1194700A582A8 /* StatusEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C133D2969F851007BE2D5 /* StatusEdit.swift */; };
+		5FC21CF429C1194700A582A8 /* StatusEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C133D2969F851007BE2D5 /* StatusEdit.swift */; };
 		62864F10213AF68900823C8A /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* Client.swift */; };
 		62864F11213AF68900823C8A /* ClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* ClientError.swift */; };
 		62864F12213AF68900823C8A /* ClientType.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* ClientType.swift */; };
@@ -354,15 +358,15 @@
 		15861D2922B8451800C37885 /* PollsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollsTests.swift; sourceTree = "<group>"; };
 		15CAFCD822C1923E00444841 /* PollPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollPayload.swift; sourceTree = "<group>"; };
 		15CAFCDC22C1933A00444841 /* PollPayloadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollPayloadTests.swift; sourceTree = "<group>"; };
+		5F2F468C298DBC8500A1059B /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		5F2F4691298DC9AA00A1059B /* Result+isError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+isError.swift"; sourceTree = "<group>"; };
+		5F5338AC295FA87300C1D9AE /* FilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTests.swift; sourceTree = "<group>"; };
+		5F8C133D2969F851007BE2D5 /* StatusEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusEdit.swift; sourceTree = "<group>"; };
 		5F944323281C789D00683F85 /* MarkerTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerTimeline.swift; sourceTree = "<group>"; };
 		5F944327281C838100683F85 /* MarkersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkersTests.swift; sourceTree = "<group>"; };
 		5FA81215281B11A9008B6DAB /* Marker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marker.swift; sourceTree = "<group>"; };
 		5FA81219281B123E008B6DAB /* MarkerCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerCollection.swift; sourceTree = "<group>"; };
 		5FA8121D281B141E008B6DAB /* MarkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerTests.swift; sourceTree = "<group>"; };
-		5F2F468C298DBC8500A1059B /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
-		5F2F4691298DC9AA00A1059B /* Result+isError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+isError.swift"; sourceTree = "<group>"; };
-		5F5338AC295FA87300C1D9AE /* FilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTests.swift; sourceTree = "<group>"; };
-		5F8C133D2969F851007BE2D5 /* StatusEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusEdit.swift; sourceTree = "<group>"; };
 		5FA81226281B185C008B6DAB /* ClientObserverList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientObserverList.swift; sourceTree = "<group>"; };
 		5FA8122A281B19C0008B6DAB /* Markers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Markers.json; sourceTree = "<group>"; };
 		5FA8122C281B25AC008B6DAB /* Markers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Markers.swift; sourceTree = "<group>"; };
@@ -593,9 +597,9 @@
 				OBJ_122 /* ClientsTests.swift */,
 				OBJ_123 /* DomainBlocksTests.swift */,
 				OBJ_124 /* FavouritesTests.swift */,
+				5F5338AC295FA87300C1D9AE /* FilterTests.swift */,
 				OBJ_125 /* FollowRequestsTests.swift */,
 				OBJ_126 /* InstancesTests.swift */,
-				5F5338AC295FA87300C1D9AE /* FilterTests.swift */,
 				OBJ_127 /* ListsTests.swift */,
 				OBJ_128 /* LoginTests.swift */,
 				5F944327281C838100683F85 /* MarkersTests.swift */,
@@ -659,6 +663,7 @@
 				OBJ_37 /* LoginSettings.swift */,
 				5FA81215281B11A9008B6DAB /* Marker.swift */,
 				5FA81219281B123E008B6DAB /* MarkerCollection.swift */,
+				5F944323281C789D00683F85 /* MarkerTimeline.swift */,
 				OBJ_38 /* Mention.swift */,
 				OBJ_39 /* Notification.swift */,
 				OBJ_40 /* NotificationType.swift */,
@@ -673,7 +678,6 @@
 				5F8C133D2969F851007BE2D5 /* StatusEdit.swift */,
 				OBJ_46 /* Tag.swift */,
 				OBJ_47 /* Visibility.swift */,
-				5F944323281C789D00683F85 /* MarkerTimeline.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -822,10 +826,12 @@
 				OBJ_100 /* InstanceTests.swift */,
 				OBJ_101 /* ListTests.swift */,
 				OBJ_102 /* LoginSettingsTests.swift */,
+				5FA8121D281B141E008B6DAB /* MarkerTests.swift */,
 				OBJ_103 /* MastodonErrorTests.swift */,
 				OBJ_104 /* MentionTests.swift */,
 				OBJ_105 /* NotificationTests.swift */,
 				OBJ_106 /* NotificationTypeTests.swift */,
+				151DF8B3222DFF8600DAEA7A /* PollTests.swift */,
 				OBJ_107 /* RelationshipTests.swift */,
 				OBJ_108 /* ReportTests.swift */,
 				OBJ_109 /* ResultsTests.swift */,
@@ -833,8 +839,6 @@
 				OBJ_111 /* StringsTests.swift */,
 				OBJ_112 /* TagTests.swift */,
 				OBJ_113 /* VisibilityTests.swift */,
-				151DF8B3222DFF8600DAEA7A /* PollTests.swift */,
-				5FA8121D281B141E008B6DAB /* MarkerTests.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1050,8 +1054,6 @@
 				154E44F922AE6EE200F9B815 /* Filter.swift in Sources */,
 				5F2F468F298DBC8500A1059B /* Response.swift in Sources */,
 				62864F32213AF68900823C8A /* Status.swift in Sources */,
-				5FA81218281B11A9008B6DAB /* Marker.swift in Sources */,
-				5FA8121C281B123E008B6DAB /* MarkerCollection.swift in Sources */,
 				62864F33213AF68900823C8A /* Tag.swift in Sources */,
 				62864F34213AF68900823C8A /* Visibility.swift in Sources */,
 				62864F35213AF68900823C8A /* Pagination.swift in Sources */,
@@ -1103,7 +1105,6 @@
 				629A4AD6213AF5B100A6386E /* String.swift in Sources */,
 				629A4AD7213AF5B100A6386E /* URLComponents.swift in Sources */,
 				629A4AD8213AF5B100A6386E /* URLRequest.swift in Sources */,
-				5F8C133F2969F851007BE2D5 /* StatusEdit.swift in Sources */,
 				629A4AD9213AF5B100A6386E /* Functions.swift in Sources */,
 				629A4ADA213AF5B100A6386E /* HTTPMethod.swift in Sources */,
 				629A4ADB213AF5B100A6386E /* MediaAttachment.swift in Sources */,
@@ -1124,6 +1125,7 @@
 				629A4AE9213AF5B100A6386E /* Mention.swift in Sources */,
 				629A4AEA213AF5B100A6386E /* Notification.swift in Sources */,
 				5F944325281C789D00683F85 /* MarkerTimeline.swift in Sources */,
+				5FC21CF329C1194700A582A8 /* StatusEdit.swift in Sources */,
 				153B239F23465F5800A317A2 /* ClientDelegate.swift in Sources */,
 				629A4AEB213AF5B100A6386E /* NotificationType.swift in Sources */,
 				629A4AEC213AF5B100A6386E /* Relationship.swift in Sources */,
@@ -1131,10 +1133,7 @@
 				629A4AEE213AF5B100A6386E /* RequestError.swift in Sources */,
 				629A4AEF213AF5B100A6386E /* Results.swift in Sources */,
 				154E44F822AE6EE200F9B815 /* Filter.swift in Sources */,
-				5F2F468E298DBC8500A1059B /* Response.swift in Sources */,
 				629A4AF0213AF5B100A6386E /* Status.swift in Sources */,
-				5FA81217281B11A9008B6DAB /* Marker.swift in Sources */,
-				5FA8121B281B123E008B6DAB /* MarkerCollection.swift in Sources */,
 				629A4AF1213AF5B100A6386E /* Tag.swift in Sources */,
 				629A4AF2213AF5B100A6386E /* Visibility.swift in Sources */,
 				629A4AF3213AF5B100A6386E /* Pagination.swift in Sources */,
@@ -1166,6 +1165,7 @@
 				629A4B06213AF5B100A6386E /* Search.swift in Sources */,
 				629A4B07213AF5B100A6386E /* Statuses.swift in Sources */,
 				629A4B08213AF5B100A6386E /* Timelines.swift in Sources */,
+				5FC21CF129C1193F00A582A8 /* Response.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1177,6 +1177,7 @@
 				153B23AC23467CE100A317A2 /* FutureTask.swift in Sources */,
 				154E44F322AE6EDB00F9B815 /* Filters.swift in Sources */,
 				OBJ_146 /* ClientError.swift in Sources */,
+				5FC21CF429C1194700A582A8 /* StatusEdit.swift in Sources */,
 				OBJ_147 /* ClientType.swift in Sources */,
 				OBJ_148 /* CharacterSet.swift in Sources */,
 				OBJ_149 /* Data.swift in Sources */,
@@ -1186,7 +1187,6 @@
 				OBJ_153 /* String.swift in Sources */,
 				OBJ_154 /* URLComponents.swift in Sources */,
 				OBJ_155 /* URLRequest.swift in Sources */,
-				5F8C133E2969F851007BE2D5 /* StatusEdit.swift in Sources */,
 				OBJ_156 /* Functions.swift in Sources */,
 				OBJ_157 /* HTTPMethod.swift in Sources */,
 				OBJ_158 /* MediaAttachment.swift in Sources */,
@@ -1198,6 +1198,7 @@
 				OBJ_164 /* Card.swift in Sources */,
 				151DF8AC222DDDB700DAEA7A /* Poll.swift in Sources */,
 				OBJ_165 /* ClientApplication.swift in Sources */,
+				5FC21CF229C1194000A582A8 /* Response.swift in Sources */,
 				OBJ_166 /* Context.swift in Sources */,
 				OBJ_167 /* Emoji.swift in Sources */,
 				OBJ_168 /* Empty.swift in Sources */,
@@ -1214,7 +1215,6 @@
 				OBJ_177 /* RequestError.swift in Sources */,
 				OBJ_178 /* Results.swift in Sources */,
 				154E44F722AE6EE200F9B815 /* Filter.swift in Sources */,
-				5F2F468D298DBC8500A1059B /* Response.swift in Sources */,
 				OBJ_179 /* Status.swift in Sources */,
 				5FA81216281B11A9008B6DAB /* Marker.swift in Sources */,
 				5FA8121A281B123E008B6DAB /* MarkerCollection.swift in Sources */,
