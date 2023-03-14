@@ -19,7 +19,7 @@ public class Marker: Codable {
     
     public init(lastReadStatus: Status) {
         self.lastReadId = lastReadStatus.id
-        self.updatedAt = Date.now
+        self.updatedAt = Date()
         self.version = 1
     }
     
