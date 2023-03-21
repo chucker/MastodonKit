@@ -55,6 +55,9 @@
 		5FA81227281B185C008B6DAB /* ClientObserverList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA81226281B185C008B6DAB /* ClientObserverList.swift */; };
 		5FA81228281B185C008B6DAB /* ClientObserverList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA81226281B185C008B6DAB /* ClientObserverList.swift */; };
 		5FA81229281B185C008B6DAB /* ClientObserverList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA81226281B185C008B6DAB /* ClientObserverList.swift */; };
+		5FC21CFA29C9E8E800A582A8 /* SearchType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC21CF929C9E8E800A582A8 /* SearchType.swift */; };
+		5FC21CFB29C9E8E800A582A8 /* SearchType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC21CF929C9E8E800A582A8 /* SearchType.swift */; };
+		5FC21CFC29C9E8E800A582A8 /* SearchType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC21CF929C9E8E800A582A8 /* SearchType.swift */; };
 		62864F10213AF68900823C8A /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* Client.swift */; };
 		62864F11213AF68900823C8A /* ClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* ClientError.swift */; };
 		62864F12213AF68900823C8A /* ClientType.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* ClientType.swift */; };
@@ -353,6 +356,7 @@
 		5F5338AC295FA87300C1D9AE /* FilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTests.swift; sourceTree = "<group>"; };
 		5F8C133D2969F851007BE2D5 /* StatusEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusEdit.swift; sourceTree = "<group>"; };
 		5FA81226281B185C008B6DAB /* ClientObserverList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientObserverList.swift; sourceTree = "<group>"; };
+		5FC21CF929C9E8E800A582A8 /* SearchType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchType.swift; sourceTree = "<group>"; };
 		62864F50213AF68900823C8A /* MastodonKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MastodonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		629A4B0E213AF5B100A6386E /* MastodonKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MastodonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"MastodonKit::MastodonKit::Product" /* MastodonKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MastodonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -652,6 +656,7 @@
 				OBJ_42 /* Report.swift */,
 				OBJ_43 /* RequestError.swift */,
 				OBJ_44 /* Results.swift */,
+				5FC21CF929C9E8E800A582A8 /* SearchType.swift */,
 				OBJ_45 /* Status.swift */,
 				5F8C133D2969F851007BE2D5 /* StatusEdit.swift */,
 				OBJ_46 /* Tag.swift */,
@@ -1022,6 +1027,7 @@
 				62864F2C213AF68900823C8A /* Notification.swift in Sources */,
 				153B23A023465F5800A317A2 /* ClientDelegate.swift in Sources */,
 				62864F2D213AF68900823C8A /* NotificationType.swift in Sources */,
+				5FC21CFC29C9E8E800A582A8 /* SearchType.swift in Sources */,
 				62864F2E213AF68900823C8A /* Relationship.swift in Sources */,
 				62864F2F213AF68900823C8A /* Report.swift in Sources */,
 				62864F30213AF68900823C8A /* RequestError.swift in Sources */,
@@ -1101,6 +1107,7 @@
 				629A4AEA213AF5B100A6386E /* Notification.swift in Sources */,
 				153B239F23465F5800A317A2 /* ClientDelegate.swift in Sources */,
 				629A4AEB213AF5B100A6386E /* NotificationType.swift in Sources */,
+				5FC21CFB29C9E8E800A582A8 /* SearchType.swift in Sources */,
 				629A4AEC213AF5B100A6386E /* Relationship.swift in Sources */,
 				629A4AED213AF5B100A6386E /* Report.swift in Sources */,
 				629A4AEE213AF5B100A6386E /* RequestError.swift in Sources */,
@@ -1196,6 +1203,7 @@
 				OBJ_186 /* Request.swift in Sources */,
 				OBJ_187 /* RequestRange.swift in Sources */,
 				OBJ_188 /* Accounts.swift in Sources */,
+				5FC21CFA29C9E8E800A582A8 /* SearchType.swift in Sources */,
 				OBJ_189 /* Blocks.swift in Sources */,
 				OBJ_190 /* Clients.swift in Sources */,
 				OBJ_191 /* DomainBlocks.swift in Sources */,
