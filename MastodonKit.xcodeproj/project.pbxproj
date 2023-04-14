@@ -44,6 +44,9 @@
 		15CAFCDA22C1923E00444841 /* PollPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CAFCD822C1923E00444841 /* PollPayload.swift */; };
 		15CAFCDB22C1923E00444841 /* PollPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CAFCD822C1923E00444841 /* PollPayload.swift */; };
 		15CAFCDD22C1933A00444841 /* PollPayloadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CAFCDC22C1933A00444841 /* PollPayloadTests.swift */; };
+		5F053A6629E9B44500E2FC8F /* SearchType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F053A6529E9B44500E2FC8F /* SearchType.swift */; };
+		5F053A6729E9B44500E2FC8F /* SearchType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F053A6529E9B44500E2FC8F /* SearchType.swift */; };
+		5F053A6829E9B44500E2FC8F /* SearchType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F053A6529E9B44500E2FC8F /* SearchType.swift */; };
 		5F2F468F298DBC8500A1059B /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F468C298DBC8500A1059B /* Response.swift */; };
 		5F2F4692298DC9AA00A1059B /* Result+isError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F4691298DC9AA00A1059B /* Result+isError.swift */; };
 		5F5338AD295FA87300C1D9AE /* FilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5338AC295FA87300C1D9AE /* FilterTests.swift */; };
@@ -65,6 +68,9 @@
 		5FC21CF229C1194000A582A8 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F468C298DBC8500A1059B /* Response.swift */; };
 		5FC21CF329C1194700A582A8 /* StatusEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C133D2969F851007BE2D5 /* StatusEdit.swift */; };
 		5FC21CF429C1194700A582A8 /* StatusEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8C133D2969F851007BE2D5 /* StatusEdit.swift */; };
+		5FC21CFA29C9E8E800A582A8 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		5FC21CFB29C9E8E800A582A8 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		5FC21CFC29C9E8E800A582A8 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		62864F10213AF68900823C8A /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* Client.swift */; };
 		62864F11213AF68900823C8A /* ClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* ClientError.swift */; };
 		62864F12213AF68900823C8A /* ClientType.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* ClientType.swift */; };
@@ -358,6 +364,7 @@
 		15861D2922B8451800C37885 /* PollsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollsTests.swift; sourceTree = "<group>"; };
 		15CAFCD822C1923E00444841 /* PollPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollPayload.swift; sourceTree = "<group>"; };
 		15CAFCDC22C1933A00444841 /* PollPayloadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollPayloadTests.swift; sourceTree = "<group>"; };
+		5F053A6529E9B44500E2FC8F /* SearchType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchType.swift; sourceTree = "<group>"; };
 		5F2F468C298DBC8500A1059B /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		5F2F4691298DC9AA00A1059B /* Result+isError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+isError.swift"; sourceTree = "<group>"; };
 		5F5338AC295FA87300C1D9AE /* FilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTests.swift; sourceTree = "<group>"; };
@@ -674,6 +681,7 @@
 				OBJ_42 /* Report.swift */,
 				OBJ_43 /* RequestError.swift */,
 				OBJ_44 /* Results.swift */,
+				5F053A6529E9B44500E2FC8F /* SearchType.swift */,
 				OBJ_45 /* Status.swift */,
 				5F8C133D2969F851007BE2D5 /* StatusEdit.swift */,
 				OBJ_46 /* Tag.swift */,
@@ -1014,6 +1022,7 @@
 				62864F10213AF68900823C8A /* Client.swift in Sources */,
 				153B23AE23467CE100A317A2 /* FutureTask.swift in Sources */,
 				154E44F522AE6EDB00F9B815 /* Filters.swift in Sources */,
+				5F053A6829E9B44500E2FC8F /* SearchType.swift in Sources */,
 				62864F11213AF68900823C8A /* ClientError.swift in Sources */,
 				62864F12213AF68900823C8A /* ClientType.swift in Sources */,
 				62864F13213AF68900823C8A /* CharacterSet.swift in Sources */,
@@ -1047,6 +1056,7 @@
 				5F944326281C789D00683F85 /* MarkerTimeline.swift in Sources */,
 				153B23A023465F5800A317A2 /* ClientDelegate.swift in Sources */,
 				62864F2D213AF68900823C8A /* NotificationType.swift in Sources */,
+				5FC21CFC29C9E8E800A582A8 /* (null) in Sources */,
 				62864F2E213AF68900823C8A /* Relationship.swift in Sources */,
 				62864F2F213AF68900823C8A /* Report.swift in Sources */,
 				62864F30213AF68900823C8A /* RequestError.swift in Sources */,
@@ -1095,6 +1105,7 @@
 				629A4ACE213AF5B100A6386E /* Client.swift in Sources */,
 				153B23AD23467CE100A317A2 /* FutureTask.swift in Sources */,
 				154E44F422AE6EDB00F9B815 /* Filters.swift in Sources */,
+				5F053A6729E9B44500E2FC8F /* SearchType.swift in Sources */,
 				629A4ACF213AF5B100A6386E /* ClientError.swift in Sources */,
 				629A4AD0213AF5B100A6386E /* ClientType.swift in Sources */,
 				629A4AD1213AF5B100A6386E /* CharacterSet.swift in Sources */,
@@ -1128,6 +1139,7 @@
 				5FC21CF329C1194700A582A8 /* StatusEdit.swift in Sources */,
 				153B239F23465F5800A317A2 /* ClientDelegate.swift in Sources */,
 				629A4AEB213AF5B100A6386E /* NotificationType.swift in Sources */,
+				5FC21CFB29C9E8E800A582A8 /* (null) in Sources */,
 				629A4AEC213AF5B100A6386E /* Relationship.swift in Sources */,
 				629A4AED213AF5B100A6386E /* Report.swift in Sources */,
 				629A4AEE213AF5B100A6386E /* RequestError.swift in Sources */,
@@ -1202,6 +1214,7 @@
 				OBJ_166 /* Context.swift in Sources */,
 				OBJ_167 /* Emoji.swift in Sources */,
 				OBJ_168 /* Empty.swift in Sources */,
+				5F053A6629E9B44500E2FC8F /* SearchType.swift in Sources */,
 				OBJ_169 /* Instance.swift in Sources */,
 				OBJ_170 /* List.swift in Sources */,
 				OBJ_171 /* LoginSettings.swift in Sources */,
@@ -1227,6 +1240,7 @@
 				OBJ_186 /* Request.swift in Sources */,
 				OBJ_187 /* RequestRange.swift in Sources */,
 				OBJ_188 /* Accounts.swift in Sources */,
+				5FC21CFA29C9E8E800A582A8 /* (null) in Sources */,
 				OBJ_189 /* Blocks.swift in Sources */,
 				OBJ_190 /* Clients.swift in Sources */,
 				OBJ_191 /* DomainBlocks.swift in Sources */,

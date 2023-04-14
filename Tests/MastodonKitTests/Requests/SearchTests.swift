@@ -24,6 +24,21 @@ class TimelinesTeSearchTestssts: XCTestCase {
         XCTAssertEqual(request.method.queryItems?.count, 1)
         XCTAssertTrue(request.method.queryItems!.contains(expectedQuery))
     }
+    
+    func testSearchByType() {
+        var request = Search.search(query: "mastodonkit")
+        let expectedQuery = URLQueryItem(name: "q", value: "mastodonkit")
+
+        XCTAssertEqual(request.method.queryItems?.count, 1)
+        XCTAssertTrue(request.method.queryItems!.contains(expectedQuery))
+
+        request = Search.search(query: "mastodonkit", type: .hashtags)
+        let expectedType = URLQueryItem(name: "type", value: "hashtags")
+
+        XCTAssertEqual(request.method.queryItems?.count, 2)
+        XCTAssertTrue(request.method.queryItems!.contains(expectedQuery))
+        XCTAssertTrue(request.method.queryItems!.contains(expectedType))
+    }
 
     func testSearchWithResolve() {
         let request = Search.search(query: "mastodonkit", limit: 1, resolve: true)
